@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="loading">Data is loading...</div>
+  <div id="check-duplicate">
+    <h1>Check duplicate</h1>
+    <label for="duplicate-ip">Enter 6 numbers with space(' ') seperator, e.g: 1 2 3 4 5 6</label><br>
+    <input id="duplicate-ip" type="text">
+    <button id="duplicate-btn">Check</button>
+
+    <h3>Duplicate winning numbers:</h3>
+    <table id="duplicate-table-winning">
+      <tr>
+        <th>Date</th>
+        <th>Additional Number</th>        
+      </tr>     
+    </table>
+
+    <hr />
+
+    <h3>Duplicate additional numbers:</h3>
+    <table id="duplicate-table-additional-number">
+      <tr>
+        <th>Number</th>
+        <th>Year</th>
+        <th>Count</th>
+      </tr>     
+    </table>
+
+    <h3>Duplicate additional numbers details:</h3>
+    <table id="duplicate-table-additional-number-details">
+      <tr>
+        <th>Number</th>
+        <th>Year</th>
+        <th>Count</th>
+      </tr>     
+    </table>
+  </div>
+
+  <script src="utils.js"></script>
+  <script src="check-duplicate.js"></script>
+</body>
+</html>
