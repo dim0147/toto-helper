@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TOTO - Check Duplicate</title>
 </head>
+
 <body>
   <div id="loading">Data is loading...</div>
+
+  <div>
+    <a href="check-duplicate.html">Check duplicate</a>
+    <a href="generate-number.html">Generate number</a>
+  </div>
+
   <div id="check-duplicate">
     <h1>Check duplicate</h1>
     <label for="duplicate-ip">Enter 6 numbers with space(' ') seperator, e.g: 1 2 3 4 5 6</label><br>
@@ -17,8 +25,8 @@
     <table id="duplicate-table-winning">
       <tr>
         <th>Date</th>
-        <th>Additional Number</th>        
-      </tr>     
+        <th>Additional Number</th>
+      </tr>
     </table>
 
     <hr />
@@ -29,8 +37,10 @@
         <th>Number</th>
         <th>Year</th>
         <th>Count</th>
-      </tr>     
+      </tr>
     </table>
+
+    <hr />
 
     <h3>Duplicate additional numbers details:</h3>
     <table id="duplicate-table-additional-number-details">
@@ -38,11 +48,23 @@
         <th>Number</th>
         <th>Year</th>
         <th>Count</th>
-      </tr>     
+      </tr>
+    </table>
+
+    <hr />
+
+    <h3>Winning set:</h3>
+    <table id="duplicate-table-winning-set">
+      <tr>
+        <th>Set</th>
+        <th>Year</th>
+        <th>Count</th>
+      </tr>
     </table>
   </div>
 
   <script src="utils.js"></script>
   <script src="check-duplicate.js"></script>
 </body>
+
 </html>

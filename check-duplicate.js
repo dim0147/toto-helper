@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   fetch('data.json').then((res) => res.json()).then((responseData) => {
     data.push(...responseData);
     document.getElementById('loading').textContent = 'Data loaded!';
+    setupWinningSetTable();
     console.log(data);
   });
 
@@ -125,4 +126,41 @@ function setupAdditionalDetailsTable(duplicatedAdd) {
     })
   }
 
+}
+
+function setupWinningSetTable() {
+  // Duplicate table winning
+  const table = document.getElementById('duplicate-table-winning-set');
+  deleteRows(table.querySelectorAll('.row'));
+
+  const winningSet = new Map();
+
+  data.forEach((item) => {
+    const key = item[1].join(' ');
+    const year = getYearFromDate(item[0]);
+    if (winningSet.has(key)) {
+      const mapItem = winningSet.get(key);
+      mapItem.count += 1;
+      if (!mapItem.years.includes(year)) {
+        mapItem.years.push(year);
+      }
+      winningSet.set(key, mapItem);
+    } else {
+      const mapItem = {
+        count: 1,
+        years: [year]
+      };
+      winningSet.set(key, mapItem);
+    }
+  });
+
+  const sortedArray = Array.from(winningSet).filter((item) => {
+    return item[1].count > 0;
+  });
+  sortedArray.sort((a, b) => a[1].count - b[1].count);
+
+  sortedArray.forEach((item) => {
+    const [set, { years, count }] = item;
+    insertRow(table, [set, years.join(','), count]);
+  })
 }

@@ -88,3 +88,13 @@ function isDate1EqualDate2(dateString1, dateString2) {
   // Compare the dates
   return date1.getTime() === date2.getTime();
 }
+
+function getYearFromDate(dateString) {
+  // Create a new Date object from the date string
+  const date = new Date(dateString);
+  
+  // Get the year using getFullYear() method
+  const year = date.getFullYear();
+  
+  return year;
+}
