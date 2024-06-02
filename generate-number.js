@@ -98,9 +98,9 @@ function restoreStartDateAndEndDate() {
   const savedStartDate = window.localStorage.getItem('generate_number_start_date');
   const savedEndDate = window.localStorage.getItem('generate_number_end_date');
 
-  if (savedEndDate) {
-    document.getElementById('end-date').value = savedEndDate;
-  } else {
+  // if (savedEndDate) {
+  //   document.getElementById('end-date').value = savedEndDate;
+  // } else {
     // Get today's date
     const today = new Date();
 
@@ -112,7 +112,7 @@ function restoreStartDateAndEndDate() {
 
     // Set the default value of the input element to today's date
     document.getElementById('end-date').value = formattedDate;
-  }
+  // }
 
   if (savedStartDate) {
     document.getElementById('start-date').value = savedStartDate;
