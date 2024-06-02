@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TOTO - Generate Numbers</title>
+
+  <style>
+    .long-table {
+      width: fit-content;
+      max-height: 500px;
+      overflow-y: scroll;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="loading">Data is loading...</div>
+  <div id="check-duplicate">
+    <h1>Generate number</h1>
+
+    <label for="start-date">Start date:</label>
+    <input type="date" id="start-date" value="2008-07-03" min="2008-07-03" />
+
+    <br />
+
+    <label for="end-date">End date:</label>
+    <input type="date" id="end-date" />
+
+    <div>
+      <label>1st number:</label>
+      <input type="radio" name="first-numb" value="top" checked> Top
+      <input type="radio" name="first-numb" value="bottom"> Bottom
+    </div>
+
+    <div>
+      <label>2nd number:</label>
+      <input type="radio" name="second-numb" value="top" checked> Top
+      <input type="radio" name="second-numb" value="bottom"> Bottom
+    </div>
+
+    <div>
+      <label>3rd number:</label>
+      <input type="radio" name="third-numb" value="top" checked> Top
+      <input type="radio" name="third-numb" value="bottom"> Bottom
+    </div>
+
+    <div>
+      <label>4th number:</label>
+      <input type="radio" name="forth-numb" value="top"> Top
+      <input type="radio" name="forth-numb" value="bottom" checked> Bottom
+    </div>
+
+    <div>
+      <label>5th number:</label>
+      <input type="radio" name="fifth-numb" value="top"> Top
+      <input type="radio" name="fifth-numb" value="bottom" checked> Bottom
+    </div>
+
+    <div>
+      <label>6th number:</label>
+      <input type="radio" name="sixth-numb" value="top"> Top
+      <input type="radio" name="sixth-numb" value="bottom" checked> Bottom
+    </div>
+
+    <button id="generate-btn">Generate</button>
+    <p id="generate-number-text"></p>
+
+    <h3>Generated number:</h3>
+    <table id="generate-table">
+      <tr>
+        <th>Number</th>
+        <th>Top Or Bottom</th>
+        <th>Rank Position</th>
+      </tr>
+    </table>
+
+    <hr />
+
+    <h3>Top numbers:</h3>
+    <div class="long-table">
+      <table id="top-10-table">
+        <tr>
+          <th>Number</th>
+          <th>Count</th>
+        </tr>
+      </table>
+    </div>
+
+    <h3>Bottom numbers:</h3>
+    <div class="long-table">
+      <table id="bottom-10-table">
+        <tr>
+          <th>Number</th>
+          <th>Count</th>
+        </tr>
+      </table>
+    </div>
+
+    <h3>Number haven't show:</h3>
+    <table id="havent-show-table">
+      <tr>
+        <th>Number</th>
+      </tr>
+    </table>
+
+  </div>
+
+  <script src="utils.js"></script>
+  <script src="generate-number.js"></script>
+</body>
+
+</html>

@@ -64,3 +64,27 @@ function deleteRows(elements) {
     row.parentNode.removeChild(row);
   });
 }
+
+/**
+ * 
+ * @param {string} dateString1 
+ * @param {string} dateString2 
+ * @returns 
+ */
+function isDate1GreaterThanDate2(dateString1, dateString2) {
+  // Convert date strings to Date objects
+  let date1 = new Date(dateString1);
+  let date2 = new Date(dateString2);
+
+  // Compare the dates
+  return date1 > date2;
+}
+
+function isDate1EqualDate2(dateString1, dateString2) {
+  // Convert date strings to Date objects
+  let date1 = new Date(dateString1);
+  let date2 = new Date(dateString2);
+
+  // Compare the dates
+  return date1.getTime() === date2.getTime();
+}
