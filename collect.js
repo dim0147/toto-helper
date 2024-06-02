@@ -48,7 +48,7 @@ function getLatestDate() {
     const currentDate = new Date(currentDateString);
     const latestDate = new Date(latestDateString);
 
-    if (isDate1GreaterThanDate2(currentDate, latestDate)) {      
+    if (isDate1GreaterThanDate2(currentDate, latestDate)) {
       latestDateString = currentDateString;
     }
   });
@@ -104,8 +104,16 @@ async function getLottoLyzerData(latestDateString) {
         return;
       }
 
+      // Check if added already
+      const addedAlready = data.some((item) => item[0] === dateString);
+      if (addedAlready) {
+        log(`Date '${dateString}' added to data already, skipped!`);
+        return;
+      }
+
       // Add data
       const item = [dateString, numbersString.split(',').map(Number), Number(additionalNumbString)];
+
       data.push(item);
       log(`Add data for date '${dateString}', number: '${numbersString}', additional number: '${additionalNumbString}'`);
     });
@@ -224,8 +232,8 @@ function isDate1EqualDate2(dateString1, dateString2) {
  * @param {number} second 
  */
 async function delaySecond(second) {
+  console.log('Delayed function executed 1 second...');
   await new Promise(resolve => setTimeout(resolve, second * 1000));
-  console.log("Delayed function executed after 1 second");
 }
 
 start();
